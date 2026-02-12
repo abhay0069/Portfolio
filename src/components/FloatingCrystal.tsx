@@ -1,8 +1,8 @@
 "use client";
 
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, PerspectiveCamera, MeshDistortMaterial, AdaptiveDpr, AdaptiveEvents, Environment } from "@react-three/drei";
-import { useRef, useMemo, useState, useEffect } from "react";
+import { Float, MeshDistortMaterial, AdaptiveDpr, AdaptiveEvents, Environment } from "@react-three/drei";
+import { useRef, useState, useEffect } from "react";
 import * as THREE from "three";
 import { MotionValue, useTransform } from "framer-motion";
 
@@ -34,10 +34,13 @@ function BackgroundBlobs() {
 function MorphingModel({ scrollYProgress }: { scrollYProgress: MotionValue<number> }) {
   const mainGroup = useRef<THREE.Group>(null);
   const crystalGroup = useRef<THREE.Group>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const crystalMat = useRef<any>(null);
   const sphereGroup = useRef<THREE.Group>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const sphereMat = useRef<any>(null);
   const alchemyGroup = useRef<THREE.Group>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const alchemyMat = useRef<any>(null);
 
   const [mouse, setMouse] = useState({ x: 0, y: 0 });

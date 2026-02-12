@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const TESTIMONIALS = [
   {
@@ -84,17 +85,17 @@ export default function Testimonials() {
 
                 {/* Profile Image - Bigger and Wider */}
                 <div className="shrink-0">
-                  <motion.div
-                    whileHover={{ scale: 1.02, rotate: index % 2 === 0 ? 2.5 : -2.5 }}
-                    transition={{ duration: 0.5 }}
-                    className="w-full md:w-[800px] h-64 md:h-[500px] rounded-3xl overflow-hidden border-2 border-white/20 shadow-[0_0_40px_rgba(255,255,255,0.1)] bg-white/5"
+                  <div
+                    className="relative w-full md:w-[800px] h-64 md:h-[500px] rounded-3xl overflow-hidden border-2 border-white/20 shadow-[0_0_40px_rgba(255,255,255,0.1)] bg-white/5"
                   >
-                    <img
+                    <Image
                       src={item.image}
                       alt={item.name}
-                      className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 800px"
+                      className="object-cover"
                     />
-                  </motion.div>
+                  </div>
                 </div>
               </div>
             </motion.div>

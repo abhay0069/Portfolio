@@ -34,8 +34,6 @@ export default function Contact() {
 
   // Calculate eye movement
   const calculateEyePosition = (eyeOffset: { x: number, y: number }) => {
-    if (!containerRef.current) return { x: 0, y: 0 };
-
     // Approximate eye positions relative to container
     const eyeX = eyeOffset.x;
     const eyeY = eyeOffset.y;
@@ -144,7 +142,7 @@ export default function Contact() {
               animate={{ opacity: isTyping ? 1 : 0, scale: isTyping ? 1 : 0 }}
               className="absolute top-0 right-10 bg-black text-white px-6 py-3 rounded-2xl rounded-bl-sm font-bold text-lg"
             >
-              I'm listening!
+              I&apos;m listening!
             </motion.div>
           </div>
 
@@ -157,7 +155,7 @@ export default function Contact() {
           >
             <div className="mb-10">
               <h2 className="text-4xl font-black uppercase mb-4 tracking-tighter">Say Hello!</h2>
-              <p className="text-gray-600 font-medium">Let's create something extraordinary together.</p>
+              <p className="text-gray-600 font-medium">Let&apos;s create something extraordinary together.</p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-8">
